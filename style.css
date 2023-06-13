@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background: black;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+.wrapper {
+    width: 360px;
+    height: 100px;
+    background: linear-gradient(135deg, #480efe 25%, #b91313 50%, rgba(50, 187, 50, 0.867) 100%);
+    border-radius: 10px;
+    cursor: default;
+    animation: animate 1.5s linear infinite;
+}
+
+.wrapper .display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0a0a0a;
+    border-radius: 6px;
+    width: 345px;
+    height: 85px;
+    text-align: center;
+    z-index: 99;
+
+}
+
+.wrapper .display #time {
+    line-height: 85px;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #902dd1 25%, #f03434 50%, rgba(24, 226, 24, 0.867) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+.wrapper .display,
+.wrapper span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.wrapper span{
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 10px;
+}
+.wrapper span:first-child{
+    filter: blur(10px);
+}
+.wrapper span:last-child{
+    filter: blur(20px);
+}
+@keyframes animate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
